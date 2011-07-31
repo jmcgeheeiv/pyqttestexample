@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>John McGehee, http://www.voom.net</author>
+ <comment>
+   Copyright 2011 Voom, Inc.
+
+   This file is part of the Voom PyQt QTest Example.
+   See http://www.voom.net/pyqt-qtest-example/ for documentation.
+  
+   PyQt QTest Example is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+  
+   PyQt QTest Example is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+  
+   You should have received a copy of the GNU General Public License
+   along with PyQt QTest Example.  If not, see http://www.gnu.org/licenses/.
+ </comment>
+ <class>MargaritaMixer</class>
+ <widget class="QDialog" name="MargaritaMixer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>536</width>
+    <height>368</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Margarita Mixer</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Tequila</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Triple Sec</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QSpinBox" name="tripleSecSpinBox">
+     <property name="toolTip">
+      <string>Jiggers of triple sec</string>
+     </property>
+     <property name="maximum">
+      <number>11</number>
+     </property>
+     <property name="value">
+      <number>4</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Lime Juice</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="QLineEdit" name="limeJuiceLineEdit">
+     <property name="toolTip">
+      <string>Jiggers of lime juice</string>
+     </property>
+     <property name="text">
+      <string>12.0</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Ice</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QSlider" name="iceHorizontalSlider">
+     <property name="toolTip">
+      <string>Chunks of ice</string>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>20</number>
+     </property>
+     <property name="value">
+      <number>12</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="toolTip">
+      <string>Press OK to make the drinks</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QScrollBar" name="tequilaScrollBar">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="toolTip">
+      <string>Jiggers of tequila</string>
+     </property>
+     <property name="maximum">
+      <number>11</number>
+     </property>
+     <property name="value">
+      <number>8</number>
+     </property>
+     <property name="sliderPosition">
+      <number>8</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="toolTip">
+      <string>Speed of the blender</string>
+     </property>
+     <property name="title">
+      <string>Blender Speed</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="speedButton1">
+        <property name="text">
+         <string>&amp;Mix</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QRadioButton" name="speedButton3">
+        <property name="text">
+         <string>&amp;Puree</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="speedButton4">
+        <property name="text">
+         <string>&amp;Chop</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="speedButton5">
+        <property name="text">
+         <string>&amp;Karate Chop</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QRadioButton" name="speedButton6">
+        <property name="text">
+         <string>&amp;Beat</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QRadioButton" name="speedButton9">
+        <property name="text">
+         <string>&amp;Vaporize</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QRadioButton" name="speedButton8">
+        <property name="text">
+         <string>&amp;Liquefy</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QRadioButton" name="speedButton7">
+        <property name="text">
+         <string>&amp;Smash</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QRadioButton" name="speedButton2">
+        <property name="text">
+         <string>&amp;Whip</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>speedButtonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>tripleSecSpinBox</tabstop>
+  <tabstop>limeJuiceLineEdit</tabstop>
+  <tabstop>iceHorizontalSlider</tabstop>
+  <tabstop>speedButton1</tabstop>
+  <tabstop>speedButton2</tabstop>
+  <tabstop>speedButton3</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>MargaritaMixer</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>MargaritaMixer</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <buttongroups>
+  <buttongroup name="speedButtonGroup"/>
+ </buttongroups>
+</ui>
