@@ -10,7 +10,7 @@ See http://www.voom.net/pyqt-qtest-example for documentation.
 
 To download and run the unit test:
 
-  hg clone https://voom.kilnhg.com/Repo/Public/Group/PyQtTestExample
+  hg clone https://voom.kilnhg.com/Repo/Make-Stuff-Happen/Group/PyQtTestExample
   cd PyQtTestExample/src
   python MargaritaMixerTest.py     # Requires Python 2.6 or higher
 
