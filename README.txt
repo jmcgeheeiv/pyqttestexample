@@ -12,7 +12,7 @@ To download and run the unit test:
 
   hg clone https://voom.kilnhg.com/Repo/Public/Group/PyQtTestExample
   cd PyQtTestExample/src
-  python MargaritaMixerTest.py     # Tested with Python 2.6
+  python MargaritaMixerTest.py     # Requires Python 2.6 or higher
 
 If you change PyQtTestExample/src/MargaritaMixer.ui (such as with Qt Designer),
 you will need to recreate Ui_MargaritaMixer.py before running Python:
