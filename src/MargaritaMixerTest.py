@@ -129,6 +129,15 @@ class MargaritaMixerTest(unittest.TestCase):
         QTest.mouseClick(okWidget, Qt.LeftButton)
         self.assertEqual(self.form.getJiggers(), 4)
         
+    def test_getLiters(self):
+        '''Test the jiggers-to-liters conversion.'''
+        self.setFormToZero()
+        self.assertAlmostEqual(self.form.getLiters(), 0.0)
+        self.form.ui.iceHorizontalSlider.setValue(1)
+        self.assertAlmostEqual(self.form.getLiters(), 0.0444)
+        self.form.ui.iceHorizontalSlider.setValue(2)
+        self.assertAlmostEqual(self.form.getLiters(), 0.0444 * 2)
+        
     def test_blenderSpeedButtons(self):
         '''Test the blender speed buttons'''
         self.form.ui.speedButton1.click()

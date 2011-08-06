@@ -55,7 +55,7 @@ class MargaritaMixer(QtGui.QWidget):
     
     def getLiters(self):
         '''Return the total volume of the margaritas in liters.'''
-        return 0.0444 * self.jiggers
+        return 0.0444 * self.getJiggers()
         
     def getSpeedName(self):
         speedButton = self.ui.speedButtonGroup.checkedButton()
