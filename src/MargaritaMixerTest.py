@@ -23,9 +23,9 @@
 Test the margarita mixer GUI.
 """
 
-__author__ = "John McGehee, http://www.voom.net/"
-__version__ = "$Revision: 1.0 $"
-__date__ = "$Date: 2011/07/30 $"
+__author__ = "John McGehee, http://johnnado.com/"
+__version__ = "$Revision: 1.1 $"
+__date__ = "$Date: 2015/07/30 $"
 __copyright__ = "Copyright 2011 Voom, Inc."
 
 import sys
@@ -36,12 +36,12 @@ from PyQt4.QtCore import Qt
 
 import MargaritaMixer
 
+app = QApplication(sys.argv)
 
 class MargaritaMixerTest(unittest.TestCase):
     '''Test the margarita mixer GUI'''
     def setUp(self):
         '''Create the GUI'''
-        self.app = QApplication(sys.argv)
         self.form = MargaritaMixer.MargaritaMixer()
 
     def setFormToZero(self):
@@ -62,14 +62,14 @@ class MargaritaMixerTest(unittest.TestCase):
         self.assertEqual(self.form.ui.speedButtonGroup.checkedButton().text(), "&Karate Chop")
 
         # Class is in the default state even without pressing OK
-        self.assertEqual(self.form.getJiggers(), 36.0)
-        self.assertEqual(self.form.getSpeedName(), "&Karate Chop")
+        self.assertEqual(self.form.jiggers, 36.0)
+        self.assertEqual(self.form.speedName, "&Karate Chop")
         
         # Push OK with the left mouse button
         okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
         QTest.mouseClick(okWidget, Qt.LeftButton)
-        self.assertEqual(self.form.getJiggers(), 36.0)
-        self.assertEqual(self.form.getSpeedName(), "&Karate Chop")
+        self.assertEqual(self.form.jiggers, 36.0)
+        self.assertEqual(self.form.speedName, "&Karate Chop")
         
 
     def test_tequilaScrollBar(self):
@@ -89,7 +89,7 @@ class MargaritaMixerTest(unittest.TestCase):
         # Push OK with the left mouse button
         okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
         QTest.mouseClick(okWidget, Qt.LeftButton)
-        self.assertEqual(self.form.getJiggers(), 5)
+        self.assertEqual(self.form.jiggers, 5)
    
     def test_tripleSecSpinBox(self):
         '''Test the triple sec spin box.
@@ -101,7 +101,7 @@ class MargaritaMixerTest(unittest.TestCase):
         # Push OK with the left mouse button
         okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
         QTest.mouseClick(okWidget, Qt.LeftButton)
-        self.assertEqual(self.form.getJiggers(), 2)
+        self.assertEqual(self.form.jiggers, 2)
         
     def test_limeJuiceLineEdit(self):
         '''Test the lime juice line edit.
@@ -115,7 +115,7 @@ class MargaritaMixerTest(unittest.TestCase):
         # Push OK with the left mouse button
         okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
         QTest.mouseClick(okWidget, Qt.LeftButton)
-        self.assertEqual(self.form.getJiggers(), 3.5)
+        self.assertEqual(self.form.jiggers, 3.5)
 
     def test_iceHorizontalSlider(self):
         '''Test the ice slider.
@@ -127,37 +127,37 @@ class MargaritaMixerTest(unittest.TestCase):
         # Push OK with the left mouse button
         okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
         QTest.mouseClick(okWidget, Qt.LeftButton)
-        self.assertEqual(self.form.getJiggers(), 4)
+        self.assertEqual(self.form.jiggers, 4)
         
-    def test_getLiters(self):
+    def test_liters(self):
         '''Test the jiggers-to-liters conversion.'''
         self.setFormToZero()
-        self.assertAlmostEqual(self.form.getLiters(), 0.0)
+        self.assertAlmostEqual(self.form.liters, 0.0)
         self.form.ui.iceHorizontalSlider.setValue(1)
-        self.assertAlmostEqual(self.form.getLiters(), 0.0444)
+        self.assertAlmostEqual(self.form.liters, 0.0444)
         self.form.ui.iceHorizontalSlider.setValue(2)
-        self.assertAlmostEqual(self.form.getLiters(), 0.0444 * 2)
+        self.assertAlmostEqual(self.form.liters, 0.0444 * 2)
         
     def test_blenderSpeedButtons(self):
         '''Test the blender speed buttons'''
         self.form.ui.speedButton1.click()
-        self.assertEqual(self.form.getSpeedName(), "&Mix")
+        self.assertEqual(self.form.speedName, "&Mix")
         self.form.ui.speedButton2.click()
-        self.assertEqual(self.form.getSpeedName(), "&Whip")
+        self.assertEqual(self.form.speedName, "&Whip")
         self.form.ui.speedButton3.click()
-        self.assertEqual(self.form.getSpeedName(), "&Puree")
+        self.assertEqual(self.form.speedName, "&Puree")
         self.form.ui.speedButton4.click()
-        self.assertEqual(self.form.getSpeedName(), "&Chop")
+        self.assertEqual(self.form.speedName, "&Chop")
         self.form.ui.speedButton5.click()
-        self.assertEqual(self.form.getSpeedName(), "&Karate Chop")
+        self.assertEqual(self.form.speedName, "&Karate Chop")
         self.form.ui.speedButton6.click()
-        self.assertEqual(self.form.getSpeedName(), "&Beat")
+        self.assertEqual(self.form.speedName, "&Beat")
         self.form.ui.speedButton7.click()
-        self.assertEqual(self.form.getSpeedName(), "&Smash")
+        self.assertEqual(self.form.speedName, "&Smash")
         self.form.ui.speedButton8.click()
-        self.assertEqual(self.form.getSpeedName(), "&Liquefy")
+        self.assertEqual(self.form.speedName, "&Liquefy")
         self.form.ui.speedButton9.click()
-        self.assertEqual(self.form.getSpeedName(), "&Vaporize")
+        self.assertEqual(self.form.speedName, "&Vaporize")
 
 
 if __name__ == "__main__":

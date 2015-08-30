@@ -1,6 +1,6 @@
 MargaritaMixer PyQt QtTest Example Code
                               John McGehee
-                              August 1, 2011
+                             August 30, 2015
                             http://johnnado.com
 
 MargaritaMixer demonstrates how to unit test GUIs created with PyQt, the

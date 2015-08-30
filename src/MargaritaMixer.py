@@ -25,9 +25,9 @@ Extract Ui_MargaritaMixer.py using:
    pyuic4 --output Ui_MargaritaMixer.py MargaritaMixer.ui
 """
 
-__author__ = "John McGehee, http://www.voom.net/"
-__version__ = "$Revision: 1.0 $"
-__date__ = "$Date: 2011/07/30 $"
+__author__ = "John McGehee, http://johnnado.com/"
+__version__ = "$Revision: 1.1 $"
+__date__ = "$Date: 2015/07/30 $"
 __copyright__ = "Copyright 2011 Voom, Inc."
 
 import sys
@@ -43,7 +43,8 @@ class MargaritaMixer(QtGui.QWidget):
         self.ui = Ui_MargaritaMixer()
         self.ui.setupUi(self)
 
-    def getJiggers(self):
+    @property
+    def jiggers(self):
         '''Return the total volume of the margaritas in units of jiggers.
         One jigger is 0.0444 liters.
         '''
@@ -53,11 +54,13 @@ class MargaritaMixer(QtGui.QWidget):
         jiggersIce = self.ui.iceHorizontalSlider.value()
         return jiggersTequila + jiggersTripleSec + jiggersLimeJuice + jiggersIce
     
-    def getLiters(self):
+    @property
+    def liters(self):
         '''Return the total volume of the margaritas in liters.'''
-        return 0.0444 * self.getJiggers()
+        return 0.0444 * self.jiggers
         
-    def getSpeedName(self):
+    @property
+    def speedName(self):
         speedButton = self.ui.speedButtonGroup.checkedButton()
         if speedButton is None:
             return None
@@ -65,8 +68,9 @@ class MargaritaMixer(QtGui.QWidget):
 
     def accept(self):
         '''Execute the command in response to the OK button.'''
-        print 'The volume of drinks is {0} liters ({1} jiggers).'.format(self.getLiters(), self.getJiggers())
-        print 'The blender is running at speed "{0}"'.format(self.getSpeedName())
+        print('The volume of drinks is {0} liters ({1} jiggers).'
+              ''.format(self.liters, self.jiggers))
+        print('The blender is running at speed "{0}"'.format(self.speedName))
         self.close()
 
     def reject(self):
