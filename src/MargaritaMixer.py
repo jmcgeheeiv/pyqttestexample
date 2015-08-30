@@ -68,7 +68,7 @@ class MargaritaMixer(QtGui.QWidget):
 
     def accept(self):
         '''Execute the command in response to the OK button.'''
-        print('The volume of drinks is {0} liters ({1} jiggers()).'
+        print('The volume of drinks is {0} liters ({1} jiggers).'
               ''.format(self.liters, self.jiggers))
         print('The blender is running at speed "{0}"'.format(self.speedName))
         self.close()
