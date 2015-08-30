@@ -2,14 +2,15 @@
 MargaritaMixer PyQt QtTest Example Code
 ==========================================
 
-`MargaritaMixer` demonstrates how to unit test GUIs created with PyQt, the
+MargaritaMixer demonstrates how to unit test GUIs created with
+`PyQt <https://www.riverbankcomputing.com/software/pyqt/intro>`_, the
 Python binding of the popular Qt UI and application framework.
 
 See the article
 `Test PyQt GUIs with QTest and unittest <http://johnnado.com/pyqt-qtest-example>`_
 for documentation. 
 
-`MargaritaMixer` is tested with PyQt4, Python 2.7 and Python 3.4.  To download
+MargaritaMixer is tested with PyQt4, Python 2.7 and Python 3.4.  To download
 and run the unit test::
 
   hg clone https://jmcgeheeiv@bitbucket.org/jmcgeheeiv/pyqttestexample
