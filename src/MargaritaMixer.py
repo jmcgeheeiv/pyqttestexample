@@ -42,7 +42,7 @@ class MargaritaMixer(QtGui.QWidget):
         
         self.ui = Ui_MargaritaMixer()
         self.ui.setupUi(self)
-
+        
     @property
     def jiggers(self):
         '''Return the total volume of the margaritas in units of jiggers.
@@ -50,7 +50,7 @@ class MargaritaMixer(QtGui.QWidget):
         '''
         jiggersTequila = self.ui.tequilaScrollBar.value()
         jiggersTripleSec = self.ui.tripleSecSpinBox.value()
-        jiggersLimeJuice = self.ui.limeJuiceLineEdit.text().toDouble()[0]
+        jiggersLimeJuice = float(self.ui.limeJuiceLineEdit.text())
         jiggersIce = self.ui.iceHorizontalSlider.value()
         return jiggersTequila + jiggersTripleSec + jiggersLimeJuice + jiggersIce
     
@@ -68,7 +68,7 @@ class MargaritaMixer(QtGui.QWidget):
 
     def accept(self):
         '''Execute the command in response to the OK button.'''
-        print('The volume of drinks is {0} liters ({1} jiggers).'
+        print('The volume of drinks is {0} liters ({1} jiggers()).'
               ''.format(self.liters, self.jiggers))
         print('The blender is running at speed "{0}"'.format(self.speedName))
         self.close()
