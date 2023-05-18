@@ -2,7 +2,7 @@
 
 <img src="images/cyclomatic2-978x500.jpg" alt="Oster Galaxie Cyclomatic blender" title="Oster Galaxie Cyclomatic" />
 
-[PyQt](http://www.riverbankcomputing.co.uk/software/pyqt/intro) is the Python binding of the popular [Qt cross-platform UI and application framework](https://www.qt.io/). For unit testing, PyQt clients are expected to use the standard [Python unittest module](https://docs.python.org/3/library/unittest.html), with just a little help from the PyQt `QtTest` module.  It is not immediately apparent how to blend these two frameworks into a unified unit testing strategy.  This project shows you how to unit test a PyQt GUI dialog using only modules included in PyQt and Python.
+[PyQt](http://www.riverbankcomputing.co.uk/software/pyqt/intro) is the Python binding of the popular [Qt cross-platform UI and application framework](https://www.qt.io/). For unit testing, PyQt clients are expected to use the standard [Python unittest module](https://docs.python.org/3/library/unittest.html), with just a little help from the PyQt `QtTest` module.  It is not immediately apparent how to blend these two frameworks into a unified unit testing strategy.  This repository shows you how to unit test a PyQt GUI dialog using only modules included in PyQt and Python.
 
 While the Qt C++ API includes a complete unit testing framework, the PyQt `QtTest` module contains only the `QTest` class, with static methods to simulate keystrokes, mouse clicks, and mouse movement.
 
