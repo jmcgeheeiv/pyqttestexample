@@ -231,12 +231,12 @@ pyuic4 --output Ui_MargaritaMixer.py MargaritaMixer.ui
 
 ## Comments from the blog article converted to issues
 
-This material was originally presented as sample code here on GitHub and a separate blog post https://johnnado.com/pyqt-qtest-example/. The blog post has been migrated here so that everything is unified here on GitHub.
+This material was originally presented as sample code here on GitHub and a separate blog post https://johnnado.com/pyqt-qtest-example/. The blog post has been migrated so that everything is unified here on GitHub.
 
 The blog post accumulated comments containing useful solutions. These comments have been converted to GitHub issues:
 
-* A user asked **how to test event handlers**. Another user proposed a solution. The entire discussion appears in GitHub issue #2.
-* A user found it easier to **test using pytest** because you can scope your fixtures. The entire discussion appears in GitHub issue #3.
-* A user found a way to **test launching and accepting results from modal dialogs**. The entire discussion appears in GitHub issue #4.
-* A user asks for a good way to **test the `getSaveFileName()` dialog**. The entire discussion appears in GitHub issue #5.
+* A user asked **how to test event handlers**. Another user proposed a solution. The entire discussion appears in [issue #2](https://github.com/jmcgeheeiv/pyqttestexample/issues/2).
+* A user found it easier to **test using pytest** because you can scope your fixtures. The entire discussion appears in [issue #3](https://github.com/jmcgeheeiv/pyqttestexample/issues/3).
+* A user found a way to **test launching and accepting results from modal dialogs**. The entire discussion appears in [issue #4](https://github.com/jmcgeheeiv/pyqttestexample/issues/4).
+* A user asks for a good way to **test the `getSaveFileName()` dialog**. The entire discussion appears in [issue #5](https://github.com/jmcgeheeiv/pyqttestexample/issues/5).
 
